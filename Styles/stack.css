@@ -1,0 +1,54 @@
+:root {
+  --purple: rgb(107, 107, 144);
+  --blue: rgb(29, 77, 131);
+}
+
+.block {
+  width: 100px;
+  height: 30px;
+}
+
+.block:nth-of-type(even) {
+  animation: long-slide 3s linear infinite;
+  background-color: var(--blue);
+}
+
+.block:nth-of-type(odd) {
+  animation: short-slide 3s linear infinite;
+  background-color: var(--purple);
+}
+
+@keyframes short-slide {
+  0% {
+    transform: translateX(-10px) rotateX(10deg);
+    background-color: var(--purple);
+  }
+
+  50% {
+    transform: translateX(10px) rotateX(-10deg);
+    background-color: var(--blue);
+  }
+
+
+  100% {
+    transform: translateX(-10px) rotateX(10deg);
+    background-color: var(--purple);
+  }
+}
+
+@keyframes long-slide {
+  0% {
+    transform: translateX(14px) rotateX(-14deg);
+    background-color: var(--blue);
+  }
+
+  50% {
+    transform: translateX(-14px) rotateX(14deg);
+    background-color: var(--purple);
+  }
+
+  100% {
+    transform: translateX(14px) rotateX(-14deg);
+    background-color: var(--blue);
+  }
+}
